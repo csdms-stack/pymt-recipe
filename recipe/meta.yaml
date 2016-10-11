@@ -7,7 +7,7 @@ package:
 
 source:
   git_url: https://github.com/csdms/pymt
-  git_rev: fix-for-new-bmi
+  git_rev: mcflugen/fix-for-new-bmi
 
 requirements:
   build:
