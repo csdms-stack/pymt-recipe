@@ -1,0 +1,52 @@
+{% set name = "pymt" %}
+{% set version = "0.1.1" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  git_url: https://github.com/csdms/pymt
+  git_rev: fix-for-new-bmi
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - numpy
+    - scipy >=0.17.0
+    - nose
+    - shapely
+    - netcdf4
+    - pyyaml
+    - esmpy
+    - cfunits-python
+
+  run:
+    - python
+    - setuptools
+    - numpy
+    - scipy >=0.17.0
+    - nose
+    - shapely
+    - netcdf4
+    - pyyaml
+    - esmpy
+    - cfunits-python
+
+test:
+  imports:
+    - pymt
+  commands:
+    - nosetests --with-doctest pymt
+
+about:
+  summary: Python package that provides services for coupling BMI components
+  home: https://github.com/csdms/py-scripting
+  license: MIT
+  license_file: LICENSE
+  dev_url: https://github.com/csdms/pymt
+
+build:
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record record.txt
