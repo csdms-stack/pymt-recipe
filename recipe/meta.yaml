@@ -35,6 +35,7 @@ requirements:
     - pyyaml
     - esmpy
     - cfunits-python
+    - scripting
 
 test:
   imports:
@@ -44,7 +45,7 @@ test:
 
 about:
   summary: Python package that provides services for coupling BMI components
-  home: https://github.com/csdms/py-scripting
+  home: https://github.com/csdms/pymt
   license: MIT
   license_file: LICENSE
   dev_url: https://github.com/csdms/pymt
