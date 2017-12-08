@@ -25,6 +25,7 @@ requirements:
     - esmpy
     - cfunits-python
     - jinja2
+    - model_metadata
     - scripting
 
 test:
