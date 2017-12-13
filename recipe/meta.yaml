@@ -24,7 +24,7 @@ requirements:
     - netcdf4
     - pyyaml
     - esmpy
-    - cfunits-python
+    - cfunits >=1.5
     - jinja2
     - model_metadata
     - scripting
@@ -46,5 +46,5 @@ about:
   dev_url: https://github.com/csdms/pymt
 
 build:
-  number: 5
+  number: 8
   script: python setup.py install --single-version-externally-managed --record record.txt
