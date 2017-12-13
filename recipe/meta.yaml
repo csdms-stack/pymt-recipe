@@ -28,6 +28,7 @@ requirements:
     - jinja2
     - model_metadata
     - scripting
+    - landlab
 
 test:
   requires:
