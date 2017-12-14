@@ -36,6 +36,7 @@ test:
   imports:
     - pymt
   commands:
+    - export MPLBACKEND=Agg
     - nosetests --with-doctest pymt
 
 about:
