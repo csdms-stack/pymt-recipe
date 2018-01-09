@@ -1,5 +1,5 @@
 {% set name = "pymt" %}
-{% set version = "0.1.1" %}
+{% set version = "0.3" %}
 
 package:
   name: {{ name }}
@@ -47,5 +47,6 @@ about:
   dev_url: https://github.com/csdms/pymt
 
 build:
-  number: 8
+  number: 0
+  string: "beta"
   script: python setup.py install --single-version-externally-managed --record record.txt
