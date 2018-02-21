@@ -9,19 +9,11 @@ env:
   - secure: MYH1nh47GqUlfSChxwg7ZmoYz+y73lgq8/1Dw+GyXUWxex5YQDR/nQ8PXTrvJS4+pwmEgh9UyK6yQ3LxpVxMM7NC94+5OI5tu58wlZnGedmrwAOHQSH7vsqkL+vG+RXHEgz5nv66HjlulCNDfYEk5zCUoGwTXDXGAPkgon1vFQjh8aclLQ7ekgwnPoV2vsNy/AcaQBcnJ3VyRkFqpEHdArivreWHLZicXp/ebrvrkVZt5HIUXDva8zxUm/hXj4Qut2YEqlHXReM/eSPe+R4cS6kwKfbbsVCxDiMFso5fQ6hEvEzIS7ic1m0gGW7xhfcZmodwhJblkkDaKEbCffQ5gxTHzthtmlvGmJCKwzC3qfnsHqeUBzU/LyICpFDCoyFIzjBn1iK9ok43/U0+YgFQ4ZbFxxVkj/6ERLjI3k+/EMU2VdjJj9hLWRxJiaf+LKKjf233PSqDqQP/6vBRgg8cD9s9sWo4oKRdYvjWJMS65Q9ZXqIDfyzsQHbMCmExmdU52QYl1fPPTuBl0g95+kGtCuTtzkG4JNhI5c0EZO3XhRY84BoJMH9PnAJwUGgIij0lOaf9J50v7smmOU0wkNX9INcYry+6UAGABG+2iqTao27xO6E/GZEkXyityCZtoYWzq+q82xBwPb/GgZwPMLufl8kCnWe4BQ6olfxBRgLOWtg=
 sudo: false
 before_install:
-- |
-  if [[ $TRAVIS_OS_NAME == "osx" ]]; then
-    brew remove --force $(brew list)
-    brew cleanup -s
-    rm -rf $(brew --cache)
-  fi
+- brew remove --force $(brew list)
+- brew cleanup -s
+- rm -rf $(brew --cache)
 install:
-- |
-  if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-    OS="MacOSX-x86_64"
-  else
-    OS="Linux-x86_64"
-  fi
+- OS="MacOSX-x86_64"
 - curl $MINICONDA_URL_BASE-$OS.sh > $HOME/minconda.sh
 - bash $HOME/minconda.sh -b -p $CONDA_PREFIX
 - export PATH="$CONDA_PREFIX/bin:$PATH"
