@@ -30,9 +30,11 @@ install:
 - conda config --set always_yes yes --set changeps1 no
 - conda create -n buildit python=$TRAVIS_PYTHON_VERSION
 - source activate buildit
-- conda install -q conda-build anaconda-client coverage sphinx
+- conda install -q conda-build anaconda-client coverage sphinx pytest
 script:
-- conda build ./recipe -c csdms-stack -c defaults -c conda-forge --old-build-string
+- conda build ./recipe -c csdms-stack -c defaults -c conda-forge --old-build-string --no-test
+- conda install pymt --use-local -c csdms-stack -c conda-forge
+- pytest
 after_success:
 - curl https://raw.githubusercontent.com/csdms/ci-tools/master/anaconda_upload.py
   > $HOME/anaconda_upload.py
