@@ -36,6 +36,7 @@ install:
 - conda install -q conda-build anaconda-client coverage sphinx pytest
 script:
 - conda build ./recipe -c landlab -c csdms-stack -c defaults -c conda-forge --old-build-string --no-test
+- conda install cfunits-python -c csdms-stack -c conda-forge
 - conda install pymt --use-local -c landlab -c csdms-stack -c conda-forge
 - pytest --pyargs pymt
 after_success:
