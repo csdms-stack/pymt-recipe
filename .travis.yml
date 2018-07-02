@@ -1,6 +1,7 @@
 language: generic
 os:
 - osx
+- linux
 env:
   global:
   - CONDA_PREFIX=$HOME/miniconda
