@@ -35,8 +35,8 @@ install:
 - source activate buildit
 - conda install -q conda-build anaconda-client coverage sphinx pytest
 script:
-- conda build ./recipe -c csdms-stack -c defaults -c conda-forge --old-build-string --no-test
-- conda install pymt --use-local -c csdms-stack -c conda-forge
+- conda build ./recipe -c landlab -c csdms-stack -c defaults -c conda-forge --old-build-string --no-test
+- conda install pymt --use-local -c landlab -c csdms-stack -c conda-forge
 - pytest --pyargs pymt
 after_success:
 - curl https://raw.githubusercontent.com/csdms/ci-tools/master/anaconda_upload.py
