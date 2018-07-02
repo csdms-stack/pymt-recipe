@@ -34,7 +34,7 @@ install:
 script:
 - conda build ./recipe -c csdms-stack -c defaults -c conda-forge --old-build-string --no-test
 - conda install pymt --use-local -c csdms-stack -c conda-forge
-- pytest
+- pytest --pyargs pymt
 after_success:
 - curl https://raw.githubusercontent.com/csdms/ci-tools/master/anaconda_upload.py
   > $HOME/anaconda_upload.py
