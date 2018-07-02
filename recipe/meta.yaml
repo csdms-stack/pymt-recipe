@@ -31,7 +31,7 @@ requirements:
     - netcdf4
     - pyyaml
     - esmpy
-    - cfunits >=1.5
+    - cfunits-python
     - jinja2
     - model_metadata
     - scripting
