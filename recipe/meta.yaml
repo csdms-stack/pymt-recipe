@@ -39,12 +39,11 @@ requirements:
 
 test:
   requires:
-    - nose
+    - pytest
   imports:
     - pymt
   commands:
-    - export MPLBACKEND=Agg
-    - nosetests --with-doctest pymt
+    - pytest --pyargs pymt --doctest-modules -o doctest_optionflags="NORMALIZE_WHITESPACE IGNORE_EXCEPTION_DETAIL ALLOW_UNICODE"
 
 about:
   summary: Python package that provides services for coupling BMI components
